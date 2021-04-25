@@ -7,19 +7,20 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api/idm")
 public class Controller {
 
 
     @Autowired
     FetchDataService fetchDataService;
 
-    @GetMapping("/getdata")
+    @GetMapping("/idm")
     public List<UserModel> getUsers() {
         return fetchDataService.findAll();
 
     }
 
-    @GetMapping("/getdata/{id}")
+    @GetMapping("/idm/{id}")
     public UserModel get(@PathVariable int id) throws Exception {
         Optional<UserModel> userModel = fetchDataService.findById(id);
         if (userModel.isPresent()) {
@@ -29,17 +30,17 @@ public class Controller {
         }
     }
 
-    @PostMapping("/getdata")
+    @PostMapping("/idm")
     public UserModel createUserData(@RequestBody UserModel userModel) {
         return fetchDataService.save(userModel);
     }
 
-    @PutMapping("/getdata/{id}")
+    @PutMapping("/idm/{id}")
     public UserModel update(@RequestBody UserModel userModel) {
         return fetchDataService.save(userModel);
     }
 
-    @DeleteMapping("/getdata/{id}")
+    @DeleteMapping("/idm/{id}")
     public String delete(@PathVariable int id) throws Exception {
         Optional<UserModel> userModel = fetchDataService.findById(id);
         if (userModel.isPresent()) {
