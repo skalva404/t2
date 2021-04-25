@@ -1,7 +1,9 @@
-package com.fetchData.t2;
+package com.idm.t2.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.idm.t2.service.FetchDataService;
+import com.idm.t2.entity.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

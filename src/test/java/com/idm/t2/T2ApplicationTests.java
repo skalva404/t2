@@ -1,4 +1,4 @@
-package com.fetchData.t2;
+package com.idm.t2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

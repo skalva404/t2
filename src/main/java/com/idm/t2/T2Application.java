@@ -1,4 +1,4 @@
-package com.fetchData.t2;
+package com.idm.t2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

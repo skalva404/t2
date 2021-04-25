@@ -1,4 +1,4 @@
-package com.fetchData.t2;
+package com.idm.t2.entity;
 
 import lombok.Getter;
 import lombok.Setter;
