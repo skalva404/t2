@@ -1,9 +1,11 @@
 package com.fetchData.t2;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -12,15 +14,15 @@ public class Controller {
 
 
     @Autowired
-    FetchDataService fetchDataService;
+    private FetchDataService fetchDataService;
+    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    @GetMapping("/idm")
-    public List<UserModel> getUsers() {
-        return fetchDataService.findAll();
-
+    @GetMapping(value = "/idm", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getUsers() {
+        return gson.toJson(fetchDataService.findAll());
     }
 
-    @GetMapping("/idm/{id}")
+    @GetMapping(value = "/idm/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserModel get(@PathVariable int id) throws Exception {
         Optional<UserModel> userModel = fetchDataService.findById(id);
         if (userModel.isPresent()) {
@@ -30,17 +32,17 @@ public class Controller {
         }
     }
 
-    @PostMapping("/idm")
+    @PostMapping(value = "/idm", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserModel createUserData(@RequestBody UserModel userModel) {
         return fetchDataService.save(userModel);
     }
 
-    @PutMapping("/idm/{id}")
+    @PutMapping(value = "/idm/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserModel update(@RequestBody UserModel userModel) {
         return fetchDataService.save(userModel);
     }
 
-    @DeleteMapping("/idm/{id}")
+    @DeleteMapping(value = "/idm/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String delete(@PathVariable int id) throws Exception {
         Optional<UserModel> userModel = fetchDataService.findById(id);
         if (userModel.isPresent()) {
