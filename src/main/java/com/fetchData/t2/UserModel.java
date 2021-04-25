@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -14,27 +15,27 @@ public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Integer id;
+    private Integer id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @Column(name = "description")
-    String description;
+    private String description;
 
     @Column(name = "feature")
-    String feature;
+    private String feature;
 
     @Column(name = "type")
-    String type;
+    private String type;
 
     @Column(name = "status")
-    String status;
+    private String status;
 
     @Column(name = "createDate")
-    String createDate;
+    private Date createDate;
 
     @Column(name = "lastUpdateDate")
-    String lastUpdateDate;
+    private Date lastUpdateDate;
 
 }
