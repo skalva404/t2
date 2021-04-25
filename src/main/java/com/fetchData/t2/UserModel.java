@@ -1,108 +1,100 @@
 package com.fetchData.t2;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "permission")
-
 public class UserModel {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	@Column(name = "id")
-	Integer id;
-	
-	@Column(name = "NAME")
-	String NAME;
-	
-	@Column(name = "DESCRIPTION")
-	String DESCRIPTION;
-	
-	@Column(name = "FEATURE")
-	String FEATURE;
-	
-	@Column(name = "TYPE")
-	String TYPE;
-	
-	@Column(name = "STATUS")
-	String STATUS;
-	
-	@Column(name = "CREATE_DATE")
-	String CREATE_DATE;
-	
-	@Column(name = "LAST_UPDATE_DATE")
-	String LAST_UPDATE_DATE;
 
-	public Integer getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    Integer id;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @Column(name = "name")
+    String name;
 
-	public String getNAME() {
-		return NAME;
-	}
+    @Column(name = "description")
+    String description;
 
-	public void setNAME(String nAME) {
-		NAME = nAME;
-	}
+    @Column(name = "feature")
+    String feature;
 
-	public String getDESCRIPTION() {
-		return DESCRIPTION;
-	}
+    @Column(name = "type")
+    String type;
 
-	public void setDESCRIPTION(String dESCRIPTION) {
-		DESCRIPTION = dESCRIPTION;
-	}
+    @Column(name = "status")
+    String status;
 
-	public String getFEATURE() {
-		return FEATURE;
-	}
+    @Column(name = "createDate")
+    String createDate;
 
-	public void setFEATURE(String fEATURE) {
-		FEATURE = fEATURE;
-	}
+    @Column(name = "lastUpdateDate")
+    String lastUpdateDate;
 
-	public String getTYPE() {
-		return TYPE;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setTYPE(String tYPE) {
-		TYPE = tYPE;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getSTATUS() {
-		return STATUS;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setSTATUS(String sTATUS) {
-		STATUS = sTATUS;
-	}
+    public void setName(String nAME) {
+        name = nAME;
+    }
 
-	public String getCREATE_DATE() {
-		return CREATE_DATE;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setCREATE_DATE(String cREATE_DATE) {
-		CREATE_DATE = cREATE_DATE;
-	}
+    public void setDescription(String dESCRIPTION) {
+        description = dESCRIPTION;
+    }
 
-	public String getLAST_UPDATE_DATE() {
-		return LAST_UPDATE_DATE;
-	}
+    public String getFeature() {
+        return feature;
+    }
 
-	public void setLAST_UPDATE_DATE(String lAST_UPDATE_DATE) {
-		LAST_UPDATE_DATE = lAST_UPDATE_DATE;
-	}
-	
-	
+    public void setFeature(String fEATURE) {
+        feature = fEATURE;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String tYPE) {
+        type = tYPE;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String sTATUS) {
+        status = sTATUS;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String cREATE_DATE) {
+        createDate = cREATE_DATE;
+    }
+
+    public String getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(String lAST_UPDATE_DATE) {
+        lastUpdateDate = lAST_UPDATE_DATE;
+    }
+
 
 }
